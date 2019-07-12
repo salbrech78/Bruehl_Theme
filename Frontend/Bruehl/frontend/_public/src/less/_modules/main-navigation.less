@@ -1,0 +1,193 @@
+.navigation-main {
+	background: #fff;
+  border-bottom: 0;
+  .unitize(line-height, (@svn-navigation-line-height-mobile - 18));
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1010;
+  top: 0;
+
+.svn-header-logo{
+  padding-left: 0;
+  .unitize(padding-top, ((@svn-navigation-line-height-mobile - @svn-navigation-logo-height) / 2));
+
+  .logo--shop{
+    .unitize(height, @svn-navigation-logo-height);
+  }
+}
+
+ .svn-header-categories{
+   display: none;
+  }
+
+  .svn-header-icons{
+    .unitize(padding-right, 10);
+    .unitize(width, 100);
+    text-align: right;
+
+    &.is-svn-header-icon-left{
+    .unitize(padding-left, 10);
+      padding-right: 0;
+      text-align: left;
+    }
+
+    .navigation--entry{
+      display: inline-block;
+
+      &.entry--notepad, &.entry--account{
+        display: none;
+        }
+
+      .btn{
+      background-color: #fff;
+      background-image: none;
+      color: black;
+      border: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      [class^="icon--"]{
+       .unitize(font-size, 16);
+       .unitize(line-height, @svn-navigation-line-height-mobile);
+      }
+
+      .fa{
+        .unitize(font-size, 16);
+        .unitize(line-height, @svn-navigation-line-height-mobile);
+        }
+    }
+    .badge{
+    background-color: #fff;
+    color: black;
+    background-image: none;
+    border: 1px black solid;
+    position: absolute;
+    .unitize(top, 15);
+    .unitize(right, -10);
+    }
+  }
+  .entry--search{
+    position: static;
+    width: auto;
+
+    .entry--trigger{
+      display: inline-block;
+    }
+  }
+ }
+}
+
+@media screen and(min-width: @tabletViewportWidth) {
+ .navigation-main {
+   .svn-header-icons{
+     .unitize(width, 178);
+
+     .navigation--entry{
+       &.entry--notepad, &.entry--account{
+         display: inline-block;
+         }
+      }
+   }
+  }
+}
+
+@media screen and(min-width: @tabletLandscapeViewportWidth) {
+  .navigation-main{
+    .unitize(line-height, (@svn-navigation-line-height - 18));
+
+    .svn-header-logo{
+      .unitize(padding-left, 35);
+      .unitize(width, 202);
+      .unitize(padding-top, ((@svn-navigation-line-height - @svn-navigation-logo-height) / 2));
+    }
+
+    .svn-header-categories{
+      display: block;
+      margin: 0 auto;
+      width: 55%;
+
+      .navigation--list{
+       background: #fff;
+       text-align: center;
+
+       .navigation--entry.is--active{
+         .navigation--link{
+           background-color: transparent;
+           background-image: none;
+         }
+        }
+
+       .navigation--link{
+         color:#111;
+         .unitize(font-size, 14);
+         text-transform: uppercase;
+         font-weight: bold;
+         .unitize(letter-spacing, 1);
+         text-decoration: none;
+
+         span:after{
+           content: '';
+           display: block;
+           .unitize(height, 2);
+           width: 0;
+           .unitize(top, -15);
+           position: relative;
+           background: #111;
+           margin: auto;
+           transition: width .5s ease, background-color .5s ease;
+         }
+
+         &:hover{
+           color: #111;
+           background-color: #fff;
+           span:after{
+             width: 100%;
+             background-color: #111;
+           }
+         }
+       }
+      }
+      .js--menu-scroller--arrow{
+       .unitize(height, @svn-navigation-line-height);
+       .unitize(line-height, @svn-navigation-line-height);
+       background-color: #fff;
+       background-image: none;
+       border: 0;
+       border-radius: 0;
+       top: 0;
+       color: #111;
+      }
+    }
+     .svn-header-icons{
+       .unitize(padding-right, 35);
+       .unitize(width, 202);
+
+       &.is-svn-header-icon-left{
+       display: none;
+       }
+
+       .navigation--entry{
+          .btn{
+            [class^="icon--"]{
+             .unitize(font-size, 16);
+             .unitize(line-height, @svn-navigation-line-height);
+            }
+
+            .fa{
+              .unitize(font-size, 16);
+              .unitize(line-height, @svn-navigation-line-height);
+              }
+           }
+         }
+      }
+  }
+ }
+@media screen and(min-width: @desktopViewportWidth) {
+ .navigation-main{
+  .svn-header-categories{
+   width: 65%;
+  }
+ }
+}

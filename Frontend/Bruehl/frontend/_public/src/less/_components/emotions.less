@@ -1,0 +1,21 @@
+.emotion--overlay{
+  .unitize-height (@svn-navigation-line-height-mobile + 50);
+    }
+
+.content-main{
+  &.is--fullscreen{
+   .unitize(margin-top, @svn-navigation-line-height-mobile);
+    }
+  }
+
+@media screen and(min-width: @tabletLandscapeViewportWidth){
+  .emotion--overlay{
+    .unitize-height (@svn-navigation-line-height + 50);
+      }
+
+  .content-main{
+    &.is--fullscreen{
+     .unitize(margin-top, @svn-navigation-line-height);
+      }
+    }
+}
